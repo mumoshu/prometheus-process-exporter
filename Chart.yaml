@@ -1,0 +1,15 @@
+apiVersion: v1
+appVersion: "0.4.0"
+description: A Helm chart for prometheus process-exporter
+name: prometheus-process-exporter
+version: 0.1.0
+home: https://github.com/mumoshu/prometheus-process-exporter
+sources:
+- https://github.com/ncabatoff/process-exporter
+keywords:
+- process-exporter
+- prometheus
+- exporter
+maintainers:
+- email: ykuoka@gmail.comm
+  name: mumoshu
