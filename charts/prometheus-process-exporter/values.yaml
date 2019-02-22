@@ -6,6 +6,24 @@ image:
   tag: 0.4.0
   pullPolicy: IfNotPresent
 
+## Specify entries of `process_names:` in the process-expoter config
+## See https://github.com/ncabatoff/process-exporter/tree/master#using-a-config-file
+groups:
+- comm:
+  - chronyd
+- comm:
+  - bash
+- comm:
+  - rsync
+- comm:
+  - scp
+- comm:
+  - ssh
+
+## Creates a Prometheus Operator ServiceMonitor
+serviceMonitor:
+  enabled: false
+
 service:
   type: ClusterIP
   port: 9100
@@ -88,20 +106,6 @@ extraHostVolumeMounts: {}
 #    mountPath: <mountPath>
 #    readOnly: true|false
 #    mountPropagation: None|HostToContainer|Bidirectional
-
-## Specify entries of `process_names:` in the process-expoter config
-## See https://github.com/ncabatoff/process-exporter/tree/master#using-a-config-file
-groups:
-- comm:
-  - chronyd
-- comm:
-  - bash
-- comm:
-  - rsync
-- comm:
-  - scp
-- comm:
-  - ssh
 
 templates:
   config.yml: |
