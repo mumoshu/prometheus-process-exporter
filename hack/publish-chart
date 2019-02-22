@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+set -vx
+(cd charts/prometheus-process-exporter; helm package .)
+chart-releaser upload -o mumoshu -r prometheus-process-exporter -t $GITHUB_TOKEN -p charts/prometheus-process-exporter
+chart-releaser index -o mumoshu -r prometheus-process-exporter -t $GITHUB_TOKEN -p docs/index.yaml
