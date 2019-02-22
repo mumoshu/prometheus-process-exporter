@@ -1,1 +1,2 @@
 .envrc
+charts/prometheus-process-exporter/prometheus-process-exporter-*.tgz
