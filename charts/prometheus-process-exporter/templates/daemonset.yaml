@@ -70,6 +70,9 @@ spec:
             {{- end }}
             {{- end }}
       hostPID: true
+{{- if .Values.hostNetwork }}
+      hostNetwork: {{ .Values.hostNetwork }}
+{{- end }}
 {{- if .Values.affinity }}
       affinity:
 {{ toYaml .Values.affinity | indent 8 }}

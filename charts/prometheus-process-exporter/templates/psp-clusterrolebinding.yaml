@@ -11,7 +11,7 @@ roleRef:
   name: psp-{{ template "prometheus-process-exporter.fullname" . }}
 subjects:
   - kind: ServiceAccount
-    name: {{ template "prometheus-process-exporter.fullname" . }}
+    name: {{ template "prometheus-process-exporter.serviceAccountName" . }}
     namespace: {{ .Release.Namespace }}
 {{- end }}
 {{- end }}
