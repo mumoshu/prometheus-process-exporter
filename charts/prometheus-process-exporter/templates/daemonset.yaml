@@ -47,7 +47,7 @@ spec:
             httpGet:
               path: /
               port: {{ .Values.service.port }}
-            {{ if .Values.livensesProbe }}{{ toYaml .Values.livenessProbe | indent 12 }}{{ end }}
+            {{ if .Values.livenessProbe }}{{ toYaml .Values.livenessProbe | indent 12 }}{{ end }}
           readinessProbe:
             httpGet:
               path: /
