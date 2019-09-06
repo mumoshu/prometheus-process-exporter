@@ -44,21 +44,15 @@ spec:
               containerPort: {{ .Values.service.targetPort }}
               protocol: TCP
           livenessProbe:
-            failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
             httpGet:
               path: /
               port: {{ .Values.service.port }}
-            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
-            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
-            successThreshold: {{ .Values.livenessProbe.successThreshold }}
+            {{ if .Values.livensesProbe }}{{ toYaml .Values.livenessProbe | indent 12 }}{{ end }}
           readinessProbe:
-            failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
             httpGet:
               path: /
               port: {{ .Values.service.port }}
-            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
-            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
-            successThreshold: {{ .Values.readinessProbe.successThreshold }}
+            {{ if .Values.readinessProbe }}{{ toYaml .Values.readinessProbe | indent 12 }}{{ end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:
