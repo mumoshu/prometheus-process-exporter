@@ -47,12 +47,12 @@ spec:
             httpGet:
               path: /
               port: {{ .Values.service.port }}
-            {{ if .Values.livenessProbe }}{{ toYaml .Values.livenessProbe | indent 12 }}{{ end }}
+{{ if .Values.livenessProbe }}{{ toYaml .Values.livenessProbe | indent 12 }}{{ end }}
           readinessProbe:
             httpGet:
               path: /
               port: {{ .Values.service.port }}
-            {{ if .Values.readinessProbe }}{{ toYaml .Values.readinessProbe | indent 12 }}{{ end }}
+{{ if .Values.readinessProbe }}{{ toYaml .Values.readinessProbe | indent 12 }}{{ end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:
