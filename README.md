@@ -65,7 +65,14 @@ The following table lists the configurable parameters of the process exporter ch
 | `tolerations`                     | List of node taints to tolerate                                                                                               | `- effect: NoSchedule operator: Exists` |     |
 | `priorityClassName`               | Name of Priority Class to assign pods                                                                                         | `nil`                                   |     |
 | `endpoints`            | list of addresses that have process exporter deployed outside of the cluster                                                                | `[]`                                    |     |
-
+| `livenessProbe.initialDelaySeconds`| Amount of seconds to wait before the first probe | `20` |
+| `livenessProbe.periodSeconds`      | Amount of seconds between the probes        | `10` |
+| `livenessProbe.failureThreshold`   | Amount of probe failures before the pod is restared | `3` |
+| `livenessProbe.successThreshold`    | Amount of consecutive probe successes to mark the pod as healthy | `1` |
+| `readinessProbe.initialDelaySeconds`| Amount of seconds to wait before the first probe | `20` |
+| `readinessProbe.periodSeconds`      | Amount of seconds between the probes        | `10` |
+| `readinessProbe.failureThreshold`   | Amount of probe failures before the pod is restared | `3` |
+| `readinessProbe.successThreshold`    | Amount of consecutive probe successes to mark the pod as ready | `1` |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 

@@ -52,6 +52,19 @@ serviceAccount:
   name:
   imagePullSecrets: []
 
+# periodSeconds, failureThreashold and successThreshold are set to default Kubernetes values
+# initialDelaySeconds prevents killing the pod on start by delaying the probes
+livenessProbe:
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  failureThreshold: 3
+  successThreshold: 1
+readinessProbe:
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  failureThreshold: 3
+  successThreshold: 1
+
 securityContext:
   runAsNonRoot: true
   runAsUser: 65534
