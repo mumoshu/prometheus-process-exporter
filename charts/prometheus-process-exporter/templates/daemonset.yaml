@@ -17,6 +17,7 @@ spec:
       labels: {{ include "prometheus-process-exporter.labels" . | indent 8 }}
       annotations:
         checksum/config: {{ include "prometheus-process-exporter.config" . | toYaml | sha256sum }}
+{{ .Values.podAnnotations | toYaml | indent 8 }}
     spec:
 {{- if and .Values.rbac.create .Values.serviceAccount.create }}
       serviceAccountName: {{ template "prometheus-process-exporter.serviceAccountName" . }}
