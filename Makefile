@@ -6,9 +6,14 @@ dev:
 repackage-all:
 	scripts/repackage-all.sh
 
+# Creates a packages-up/prometheus-process-exporter-x.y.z.tgz and a prometheus-process-exporter-x.y.z tag and then creates a corresponding github release
 upload:
-	helm package charts/prometheus-process-exporter --destination packages
-	cr upload -o mumoshu -t $(GITHUB_TOKEN) -r prometheus-process-exporter -p packages
+	mkdir -p packages-up
+	rm -rf packages-up/*
+	helm package charts/prometheus-process-exporter --destination packages-up
+	cr upload -o mumoshu -t $(GITHUB_TOKEN) -r prometheus-process-exporter -p packages-up
+	cp packages-up/* packages/
 
 index:
 	cr index -p packages -r prometheus-process-exporter -i docs/index.yaml -o mumoshu -c https://github.com/mumoshu/prometheus-process-exporter
+	git add docs/index.yaml
