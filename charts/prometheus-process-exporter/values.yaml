@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 image:
   repository: ncabatoff/process-exporter
-  tag: 0.4.0
+  tag: 0.5.0
   pullPolicy: IfNotPresent
 
 ## Specify entries of `process_names:` in the process-expoter config
