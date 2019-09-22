@@ -37,42 +37,43 @@ The command removes all the Kubernetes components associated with the chart and 
 
 The following table lists the configurable parameters of the process exporter chart and their default values.
 
-|             Parameter             |                                                          Description                                                          |                 Default                 |     |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | --- |
-| `image.repository`                | Image repository                                                                                                              | `ncabatoff/process-exporter`      |     |
-| `image.tag`                       | Image tag                                                                                                                     | `0.4.0`                               |     |
-| `image.pullPolicy`                | Image pull policy                                                                                                             | `IfNotPresent`                          |     |
-| `groups`                         | [Entries of `process_names:` in the process-expoter config](https://github.com/ncabatoff/process-exporter/tree/master#using-a-config-file) | `{"groups": [{"comm": ["chronyd"]}, {"comm": ["bash"]}, {"comm": ["rsync"]}, {"comm": ["scp"]}, {"comm": ["ssh"]}]` |
-| `extraArgs`                       | Additional container arguments                                                                                                | `[]`                                    |     |
-| `extraHostVolumeMounts`           | Additional host volume mounts                                                                                                 | {}                                      |     |
-| `podLabels`                       | Additional labels to be added to pods                                                                                         | {}                                      |     |
-| `rbac.create`                     | If true, create & use RBAC resources                                                                                          | `true`                                  |     |
-| `rbac.pspEnabled`                 | Specifies whether a PodSecurityPolicy should be created.                                                                      | `true`                                  |     |
-| `hostNetwork`                     | Whether to enable hostNetwork on the DaemonSet                                                                                | `false`                                 |     |
-| `resources`                       | CPU/Memory resource requests/limits                                                                                           | `{}`                                    |     |
-| `service.type`                    | Service type                                                                                                                  | `ClusterIP`                             |     |
-| `service.port`                    | The service port                                                                                                              | `9100`                                  |     |
-| `service.targetPort`              | The target port of the container                                                                                              | `9100`                                  |     |
-| `service.nodePort`                | The node port of the service                                                                                                  |                                         |     |
-| `service.annotations`             | Kubernetes service annotations                                                                                                | `{prometheus.io/scrape: "true"}`        |     |
-| `serviceAccount.create`           | Specifies whether a service account should be created.                                                                        | `true`                                  |     |
-| `serviceAccount.name`             | Service account to be used. If not set and `serviceAccount.create` is `true`, a name is generated using the fullname template |                                         |     |
-| `serviceAccount.imagePullSecrets` | Specify image pull secrets                                                                                                    | `[]`                                    |     |
-| `serviceMonitor.enabled`    | if `true`, creates a Prometheus Operator ServiceMonitor     | `false` |
-| `securityContext`                 | SecurityContext                                                                                                               | `{"runAsNonRoot": true, "runAsUser": 65534}` |     |
-| `affinity`                        | A group of affinity scheduling rules for pod assignment                                                                       | `{}`                                    |     |
-| `nodeSelector`                    | Node labels for pod assignment                                                                                                | `{}`                                    |     |
-| `tolerations`                     | List of node taints to tolerate                                                                                               | `- effect: NoSchedule operator: Exists` |     |
-| `priorityClassName`               | Name of Priority Class to assign pods                                                                                         | `nil`                                   |     |
-| `endpoints`            | list of addresses that have process exporter deployed outside of the cluster                                                                | `[]`                                    |     |
-| `livenessProbe.initialDelaySeconds`| Amount of seconds to wait before the first probe | `20` |
-| `livenessProbe.periodSeconds`      | Amount of seconds between the probes        | `10` |
-| `livenessProbe.failureThreshold`   | Amount of probe failures before the pod is restared | `3` |
-| `livenessProbe.successThreshold`    | Amount of consecutive probe successes to mark the pod as healthy | `1` |
-| `readinessProbe.initialDelaySeconds`| Amount of seconds to wait before the first probe | `20` |
-| `readinessProbe.periodSeconds`      | Amount of seconds between the probes        | `10` |
-| `readinessProbe.failureThreshold`   | Amount of probe failures before the pod is restared | `3` |
-| `readinessProbe.successThreshold`    | Amount of consecutive probe successes to mark the pod as ready | `1` |
+|             Parameter               |                                                          Description                                                          |                 Default                 |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| `image.repository`                  | Image repository                                                                                                              | `ncabatoff/process-exporter`            |
+| `image.tag`                         | Image tag                                                                                                                     | `0.5.0`                                 |
+| `image.pullPolicy`                  | Image pull policy                                                                                                             | `IfNotPresent`                          |
+| `groups`                            | [Entries of `process_names:` in the process-expoter config](https://github.com/ncabatoff/process-exporter/tree/master#using-a-config-file) | `{"groups": [{"comm": ["chronyd"]}, {"comm": ["bash"]}, {"comm": ["rsync"]}, {"comm": ["scp"]}, {"comm": ["ssh"]}]` |
+| `extraArgs`                         | Additional container arguments                                                                                                | `[]`                                    |
+| `extraHostVolumeMounts`             | Additional host volume mounts                                                                                                 | {}                                      |
+| `podLabels`                         | Additional labels to be added to pods                                                                                         | {}                                      |
+| `podAnnotations`                    | Additional annotations to be added to pods                                                                                    | {}                                      |
+| `rbac.create`                       | If true, create & use RBAC resources                                                                                          | `true`                                  |
+| `rbac.pspEnabled`                   | Specifies whether a PodSecurityPolicy should be created.                                                                      | `true`                                  |
+| `hostNetwork`                       | Whether to enable hostNetwork on the DaemonSet                                                                                | `false`                                 |
+| `resources`                         | CPU/Memory resource requests/limits                                                                                           | `{}`                                    |
+| `service.type`                      | Service type                                                                                                                  | `ClusterIP`                             |
+| `service.port`                      | The service port                                                                                                              | `9100`                                  |
+| `service.targetPort`                | The target port of the container                                                                                              | `9100`                                  |
+| `service.nodePort`                  | The node port of the service                                                                                                  |                                         |
+| `service.annotations`               | Kubernetes service annotations                                                                                                | `{prometheus.io/scrape: "true"}`        |
+| `serviceAccount.create`             | Specifies whether a service account should be created.                                                                        | `true`                                  |
+| `serviceAccount.name`               | Service account to be used. If not set and `serviceAccount.create` is `true`, a name is generated using the fullname template |                                         |
+| `serviceAccount.imagePullSecrets`   | Specify image pull secrets                                                                                                    | `[]`                                    |
+| `serviceMonitor.enabled`            | if `true`, creates a Prometheus Operator ServiceMonitor                                                                       | `false`                                 |
+| `securityContext`                   | SecurityContext                                                                                                               | `{"runAsNonRoot": true, "runAsUser": 65534}` |
+| `affinity`                          | A group of affinity scheduling rules for pod assignment                                                                       | `{}`                                    |
+| `nodeSelector`                      | Node labels for pod assignment                                                                                                | `{}`                                    |
+| `tolerations`                       | List of node taints to tolerate                                                                                               | `- effect: NoSchedule operator: Exists` |
+| `priorityClassName`                 | Name of Priority Class to assign pods                                                                                         | `nil`                                   |
+| `endpoints`                         | list of addresses that have process exporter deployed outside of the cluster                                                  | `[]`                                    |
+| `livenessProbe.initialDelaySeconds` | Amount of seconds to wait before the first probe                                                                              | `20`                                    |
+| `livenessProbe.periodSeconds`       | Amount of seconds between the probes                                                                                          | `10`                                    |
+| `livenessProbe.failureThreshold`    | Amount of probe failures before the pod is restared                                                                           | `3`                                     |
+| `livenessProbe.successThreshold`    | Amount of consecutive probe successes to mark the pod as healthy                                                              | `1`                                     |
+| `readinessProbe.initialDelaySeconds`| Amount of seconds to wait before the first probe                                                                              | `20`                                    |
+| `readinessProbe.periodSeconds`      | Amount of seconds between the probes                                                                                          | `10`                                    |
+| `readinessProbe.failureThreshold`   | Amount of probe failures before the pod is restared                                                                           | `3`                                     |
+| `readinessProbe.successThreshold`   | Amount of consecutive probe successes to mark the pod as ready                                                                | `1`                                     |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
