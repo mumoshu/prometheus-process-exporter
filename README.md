@@ -60,6 +60,8 @@ The following table lists the configurable parameters of the process exporter ch
 | `serviceAccount.name`               | Service account to be used. If not set and `serviceAccount.create` is `true`, a name is generated using the fullname template |                                         |
 | `serviceAccount.imagePullSecrets`   | Specify image pull secrets                                                                                                    | `[]`                                    |
 | `serviceMonitor.enabled`            | if `true`, creates a Prometheus Operator ServiceMonitor                                                                       | `false`                                 |
+| `serviceMonitor.labels`             | Set of labels to apply on ServiceMonitor                                                                                      | `{}`                                    |
+| `serviceMonitor.interval`           | Set custom metric scraping interval ServiceMonitor, must be string                                                            | `10s`                                   |
 | `securityContext`                   | SecurityContext                                                                                                               | `{"runAsNonRoot": true, "runAsUser": 65534}` |
 | `affinity`                          | A group of affinity scheduling rules for pod assignment                                                                       | `{}`                                    |
 | `nodeSelector`                      | Node labels for pod assignment                                                                                                | `{}`                                    |
