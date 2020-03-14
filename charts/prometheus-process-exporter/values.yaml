@@ -23,6 +23,8 @@ groups:
 ## Creates a Prometheus Operator ServiceMonitor
 serviceMonitor:
   enabled: false
+  interval: "10s"
+  labels: {}
 
 service:
   type: ClusterIP
