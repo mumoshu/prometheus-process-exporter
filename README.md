@@ -90,3 +90,11 @@ Alternatively, a YAML file that specifies the values for the above parameters ca
 ```console
 $ helm install --name my-release -f values.yaml stable/prometheus-process-exporter
 ```
+
+## Releasing a new version of this chart
+
+```console
+$ git tag prometheus-process-exporter-${CHART_VERSION}
+$ make upload
+$ make index
+```
