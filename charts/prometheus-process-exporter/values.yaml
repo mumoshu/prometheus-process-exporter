@@ -6,7 +6,7 @@ image:
   tag: 0.5.0
   pullPolicy: IfNotPresent
 
-## Specify entries of `process_names:` in the process-expoter config
+## Specify entries of `process_names:` in the process-exporter config
 ## See https://github.com/ncabatoff/process-exporter/tree/master#using-a-config-file
 groups:
 - comm:
