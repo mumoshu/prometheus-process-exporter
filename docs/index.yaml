@@ -3,7 +3,26 @@ entries:
   prometheus-process-exporter:
   - apiVersion: v1
     appVersion: 0.4.0
-    created: "2020-03-16T09:11:52.352008+09:00"
+    created: "2020-09-01T09:14:46.408394+09:00"
+    description: A Helm chart for prometheus process-exporter
+    digest: 01958cc1da4f07ab49113f3040c1f2746bab78423039ac774f3efa98003bbd00
+    home: https://github.com/mumoshu/prometheus-process-exporter
+    keywords:
+    - process-exporter
+    - prometheus
+    - exporter
+    maintainers:
+    - email: ykuoka@gmail.comm
+      name: mumoshu
+    name: prometheus-process-exporter
+    sources:
+    - https://github.com/ncabatoff/process-exporter
+    urls:
+    - https://github.com/mumoshu/prometheus-process-exporter/releases/download/prometheus-process-exporter-0.4.2/prometheus-process-exporter-0.4.2.tgz
+    version: 0.4.2
+  - apiVersion: v1
+    appVersion: 0.4.0
+    created: "2020-09-01T09:14:46.154689+09:00"
     description: A Helm chart for prometheus process-exporter
     digest: b05aade854b83abc1ac6496684636f1b1c78b96985f02d631888f0e0f7e51787
     home: https://github.com/mumoshu/prometheus-process-exporter
@@ -22,7 +41,7 @@ entries:
     version: 0.4.1
   - apiVersion: v1
     appVersion: 0.4.0
-    created: "2020-03-16T09:11:52.053249+09:00"
+    created: "2020-09-01T09:14:46.124549+09:00"
     description: A Helm chart for prometheus process-exporter
     digest: 62a3e8a6308f4b33641aa97f1ca102254306616f4674eca1256ad7cdc3fdffa2
     home: https://github.com/mumoshu/prometheus-process-exporter
@@ -41,7 +60,7 @@ entries:
     version: 0.4.0
   - apiVersion: v1
     appVersion: 0.4.0
-    created: "2020-03-16T09:11:51.770452+09:00"
+    created: "2020-09-01T09:14:46.096082+09:00"
     description: A Helm chart for prometheus process-exporter
     digest: a74d0ed8ed0ab8c3a4c497238a97a191337346f88c1046055f02d7464ba55b53
     home: https://github.com/mumoshu/prometheus-process-exporter
@@ -60,7 +79,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: 0.4.0
-    created: "2020-03-16T09:11:51.459042+09:00"
+    created: "2020-09-01T09:14:46.066836+09:00"
     description: A Helm chart for prometheus process-exporter
     digest: 1b5819aecdaed908a7ecbf470c6f8ac6bd682064c39c13708fe3cf4cf24143b3
     home: https://github.com/mumoshu/prometheus-process-exporter
@@ -79,7 +98,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: 0.4.0
-    created: "2020-03-16T09:11:51.143278+09:00"
+    created: "2020-09-01T09:14:46.035682+09:00"
     description: A Helm chart for prometheus process-exporter
     digest: 1414ab95f7f38e18f7be3e961f3e651b76cfc207f77ca4f5f3fc1b99ba13c0ac
     home: https://github.com/mumoshu/prometheus-process-exporter
@@ -98,7 +117,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 0.4.0
-    created: "2020-03-16T09:11:50.858047+09:00"
+    created: "2020-09-01T09:14:46.007727+09:00"
     description: A Helm chart for prometheus process-exporter
     digest: 4dfd4cc855819eec2a9bf46af969ab9c4888f0ec450e9ea1549b48b59db2f580
     home: https://github.com/mumoshu/prometheus-process-exporter
@@ -117,7 +136,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 0.4.0
-    created: "2020-03-16T09:11:50.547024+09:00"
+    created: "2020-09-01T09:14:45.978747+09:00"
     description: A Helm chart for prometheus process-exporter
     digest: 46af65333ce6723a17e60bfeb4eba42ebd6b635580778fc9e04926c57a2145cc
     home: https://github.com/mumoshu/prometheus-process-exporter
@@ -134,4 +153,4 @@ entries:
     urls:
     - https://github.com/mumoshu/prometheus-process-exporter/releases/download/prometheus-process-exporter-0.1.0/prometheus-process-exporter-0.1.0.tgz
     version: 0.1.0
-generated: "2020-03-16T09:11:49.991169+09:00"
+generated: "2020-09-01T09:14:45.851422+09:00"
