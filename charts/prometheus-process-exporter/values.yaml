@@ -6,7 +6,7 @@ image:
   tag: 0.5.0
   pullPolicy: IfNotPresent
 
-## Specify entries of `process_names:` in the process-expoter config
+## Specify entries of `process_names:` in the process-exporter config
 ## See https://github.com/ncabatoff/process-exporter/tree/master#using-a-config-file
 groups:
 - comm:
@@ -36,6 +36,14 @@ service:
 
 # Annotations to add to the pod	
 podAnnotations: {}
+
+# Set to Kubernetes default updateStrategy by default.
+# See https://kubernetes.io/docs/tasks/manage-daemon/update-daemon-set/#daemonset-update-strategy for
+# supported configurations.
+updateStrategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxUnavailable: 1
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
