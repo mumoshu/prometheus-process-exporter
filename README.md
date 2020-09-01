@@ -77,6 +77,7 @@ The following table lists the configurable parameters of the process exporter ch
 | `readinessProbe.failureThreshold`   | Amount of probe failures before the pod is restared                                                                           | `3`                                     |
 | `readinessProbe.successThreshold`   | Amount of consecutive probe successes to mark the pod as ready                                                                | `1`                                     |
 | `updateStrategy`  | Update strategy for the daemonset   |   `Rolling update with 1 max unavailable` |
+
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```console
