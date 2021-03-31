@@ -64,6 +64,8 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name:
   imagePullSecrets: []
+  # Specifies whether to automount API credentials for the ServiceAccount to the pods
+  automountServiceAccountToken: true
 
 # periodSeconds, failureThreashold and successThreshold are set to default Kubernetes values
 # initialDelaySeconds prevents killing the pod on start by delaying the probes
