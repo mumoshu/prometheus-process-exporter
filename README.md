@@ -6,7 +6,7 @@
 
 ```console
 $ helm repo add prometheus-process-exporter-charts https://raw.githubusercontent.com/mumoshu/prometheus-process-exporter/master/docs
-$ helm install --name process-exporter prometheus-process-exporter-charts/prometheus-process-exporter
+$ helm install process-exporter prometheus-process-exporter-charts/prometheus-process-exporter
 ```
 
 ## Introduction
@@ -18,7 +18,7 @@ This chart bootstraps a prometheus [process exporter](https://github.com/ncabato
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name process-exporter prometheus-process-exporter-charts/prometheus-process-exporter
+$ helm install process-exporter prometheus-process-exporter-charts/prometheus-process-exporter
 ```
 
 The command deploys process exporter on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
@@ -82,7 +82,7 @@ The following table lists the configurable parameters of the process exporter ch
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```console
-$ helm install --name my-release \
+$ helm install my-release \
   --set serviceAccount.name=process-exporter  \
     stable/prometheus-process-exporter
 ```
@@ -90,7 +90,7 @@ $ helm install --name my-release \
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install --name my-release -f values.yaml stable/prometheus-process-exporter
+$ helm install my-release -f values.yaml stable/prometheus-process-exporter
 ```
 
 ## Releasing a new version of this chart
