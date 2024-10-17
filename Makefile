@@ -22,5 +22,6 @@ delta:
 	cp delta/* packages/
 
 index:
-	cr index -p packages -r prometheus-process-exporter -i docs/index.yaml -o mumoshu -c https://github.com/mumoshu/prometheus-process-exporter
+	cr index -p packages -r prometheus-process-exporter -i docs/index.yaml \
+	--pages-branch master --pages-index-path docs/index.yaml -o mumoshu
 	git add docs/index.yaml

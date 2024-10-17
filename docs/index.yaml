@@ -2,6 +2,25 @@ apiVersion: v1
 entries:
   prometheus-process-exporter:
   - apiVersion: v1
+    appVersion: 0.5.0
+    created: "2024-10-17T02:24:38.676029754Z"
+    description: A Helm chart for prometheus process-exporter
+    digest: 39b136e10bb1bc72e93139f9ea333eec6bde45ae794bd4a559c9277e5559c6ed
+    home: https://github.com/mumoshu/prometheus-process-exporter
+    keywords:
+    - process-exporter
+    - prometheus
+    - exporter
+    maintainers:
+    - email: ykuoka@gmail.comm
+      name: mumoshu
+    name: prometheus-process-exporter
+    sources:
+    - https://github.com/ncabatoff/process-exporter
+    urls:
+    - https://github.com/mumoshu/prometheus-process-exporter/releases/download/prometheus-process-exporter-0.5.0/prometheus-process-exporter-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v1
     appVersion: 0.4.0
     created: "2020-09-01T09:14:46.408394+09:00"
     description: A Helm chart for prometheus process-exporter
@@ -153,4 +172,4 @@ entries:
     urls:
     - https://github.com/mumoshu/prometheus-process-exporter/releases/download/prometheus-process-exporter-0.1.0/prometheus-process-exporter-0.1.0.tgz
     version: 0.1.0
-generated: "2020-09-01T09:14:45.851422+09:00"
+generated: "2024-10-17T02:24:38.676084461Z"
