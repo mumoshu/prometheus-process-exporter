@@ -4,7 +4,7 @@ set -e
 
 rm -rf packages/ || true
 mkdir -p packages/
-for v in 0.1.0 0.2.0 0.2.1 0.2.2 0.3.0 0.4.0; do
+for v in 0.1.0 0.2.0 0.2.1 0.2.2 0.3.0 0.4.0 0.4.1 0.4.2; do
   git checkout prometheus-process-exporter-$v
   helm package charts/prometheus-process-exporter --destination packages
 done
