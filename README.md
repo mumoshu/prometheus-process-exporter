@@ -5,7 +5,7 @@
 ## TL;DR;
 
 ```console
-$ helm repo add prometheus-process-exporter-charts https://raw.githubusercontent.com/mumoshu/prometheus-process-exporter/master/docs
+$ helm repo add prometheus-process-exporter-charts https://mumoshu.github.io/prometheus-process-exporter
 $ helm install --name process-exporter prometheus-process-exporter-charts/prometheus-process-exporter
 ```
 
