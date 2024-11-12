@@ -25,6 +25,10 @@ serviceMonitor:
   enabled: false
   interval: "10s"
   labels: {}
+  # Additional general relabeling
+  relabelings: []
+  # Additional metric relabeling
+  metricRelabelings: []
 
 service:
   type: ClusterIP
